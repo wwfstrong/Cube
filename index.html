@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>3D ring</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        perspective: 1000px;
+        overflow: hidden;
+        background-color: #000000;
+      }
+      #btn {
+        position: fixed;
+        top: -100px;
+        left: 20px;
+        font-size: 20px;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+      #btn:focus {
+        outline: none;
+      }
+      #box {
+        width: 110px;
+        height: 110px;
+        margin: 400px auto;
+        animation: upside 5s linear infinite;
+        transform-style: preserve-3d;
+      }
+      .first {
+        animation: rot 5s linear infinite;
+      }
+      .second {
+        animation: rev 5s linear infinite;
+      }
+      .third {
+        animation: rot 5s linear infinite;
+      }
+      .ring {
+        height: 110px;
+        transform-style: preserve-3d;
+        position: relative;
+        margin-top: 10px;
+      }
+      .block {
+        width: 110px;
+        height: 110px;
+        color: #ffffff;
+        background-color: rgba(255, 204, 0, 0.6);
+        text-align: center;
+        line-height: 110px;
+        border-radius: 10px;
+        position: absolute;
+        font-size: 40px;
+        transition: all 2s linear;
+      }
+
+      /* -----style ring-----  */
+      .ring > .even {
+        background-color: rgba(11, 131, 244, 0.6);
+      }
+      .ring > .one {
+        transform: rotateY(0deg) translateZ(220px);
+      }
+      .ring > .two {
+        transform: rotateY(30deg) translateZ(220px);
+      }
+      .ring > .three {
+        transform: rotateY(60deg) translateZ(220px);
+      }
+      .ring > .four {
+        transform: rotateY(90deg) translateZ(220px);
+      }
+      .ring > .five {
+        transform: rotateY(120deg) translateZ(220px);
+      }
+      .ring > .six {
+        transform: rotateY(150deg) translateZ(220px);
+      }
+      .ring > .seven {
+        transform: rotateY(180deg) translateZ(220px);
+      }
+      .ring > .eight {
+        transform: rotateY(210deg) translateZ(220px);
+      }
+      .ring > .nine {
+        transform: rotateY(240deg) translateZ(220px);
+      }
+      .ring > .ten {
+        transform: rotateY(270deg) translateZ(220px);
+      }
+      .ring > .eleven {
+        transform: rotateY(300deg) translateZ(220px);
+      }
+      .ring > .twelve {
+        transform: rotateY(330deg) translateZ(220px);
+      }
+      .cube {
+        height: 110px;
+        transform-style: preserve-3d;
+        position: relative;
+        margin-top: 10px;
+      }
+      .outside {
+        width: 200px;
+        height: 200px;
+        line-height: 200px;
+        font-size: 80px;
+      }
+      .inside {
+        width: 110px;
+        height: 110px;
+        line-height: 110px;
+        font-size: 40px;
+        margin-top: 45px;
+        margin-left: 45px;
+      }
+
+      /* -----style cube-----  */
+      .cube > .even {
+        background-color: rgba(11, 131, 244, 0.6);
+      }
+      .cube > .one {
+        transform: rotateY(0deg) translateZ(100px);
+      }
+      .cube > .two {
+        transform: rotateY(90deg) translateZ(100px);
+      }
+      .cube > .three {
+        transform: rotateY(180deg) translateZ(100px);
+      }
+      .cube > .four {
+        transform: rotateY(270deg) translateZ(100px);
+      }
+      .cube > .five {
+        transform: rotateX(90deg) translateZ(100px);
+      }
+      .cube > .six {
+        transform: rotateX(-90deg) translateZ(100px);
+      }
+      .cube > .seven {
+        transform: rotateY(90deg) translateZ(55px);
+      }
+      .cube > .eight {
+        transform: rotateY(180deg) translateZ(55px);
+      }
+      .cube > .nine {
+        transform: rotateY(270deg) translateZ(55px);
+      }
+      .cube > .ten {
+        transform: rotateY(0deg) translateZ(55px);
+      }
+      .cube > .eleven {
+        transform: rotateX(90deg) translateZ(55px);
+      }
+      .cube > .twelve {
+        transform: rotateX(-90deg) translateZ(55px);
+      }
+      .post1 {
+        top: 0px;
+        left: -500px;
+      }
+      .post2 {
+        top: -120px;
+        left: 0px;
+      }
+      .post3 {
+        top: -240px;
+        left: 500px;
+      }
+      @keyframes rot {
+        0% {
+          transform: rotateY(0deg);
+        }
+        100% {
+          transform: rotateY(360deg);
+        }
+      }
+      @keyframes rev {
+        0% {
+          transform: rotateY(0deg);
+        }
+        100% {
+          transform: rotateY(-360deg);
+        }
+      }
+      @keyframes upside {
+        0% {
+          transform: rotateX(0deg);
+        }
+        100% {
+          transform: rotateX(-360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">切换形状</button>
+    <div id="box">
+      <div class="first ring">
+        <div class="one block">1</div>
+        <div class="two block even">2</div>
+        <div class="three block">3</div>
+        <div class="four block even">4</div>
+        <div class="five block">5</div>
+        <div class="six block even">6</div>
+        <div class="seven block">7</div>
+        <div class="eight block even">8</div>
+        <div class="nine block">9</div>
+        <div class="ten block even">10</div>
+        <div class="eleven block">11</div>
+        <div class="twelve block even">12</div>
+      </div>
+      <div class="second ring">
+        <div class="one block">1</div>
+        <div class="two block even">2</div>
+        <div class="three block">3</div>
+        <div class="four block even">4</div>
+        <div class="five block">5</div>
+        <div class="six block even">6</div>
+        <div class="seven block">7</div>
+        <div class="eight block even">8</div>
+        <div class="nine block">9</div>
+        <div class="ten block even">10</div>
+        <div class="eleven block">11</div>
+        <div class="twelve block even">12</div>
+      </div>
+      <div class="third ring">
+        <div class="one block">1</div>
+        <div class="two block even">2</div>
+        <div class="three block">3</div>
+        <div class="four block even">4</div>
+        <div class="five block">5</div>
+        <div class="six block even">6</div>
+        <div class="seven block">7</div>
+        <div class="eight block even">8</div>
+        <div class="nine block">9</div>
+        <div class="ten block even">10</div>
+        <div class="eleven block">11</div>
+        <div class="twelve block even">12</div>
+      </div>
+    </div>
+    <script>
+      const btn = document.querySelector("#btn");
+      const first = document.querySelector(".first");
+      const rec1 = first.querySelectorAll("div");
+      const second = document.querySelector(".second");
+      const rec2 = second.querySelectorAll("div");
+      const third = document.querySelector(".third");
+      const rec3 = third.querySelectorAll("div");
+      let n = 0;
+      let time = true;
+      btn.onclick = () => {
+        if (time === true) {
+          first.classList.remove("ring");
+          second.classList.remove("ring");
+          third.classList.remove("ring");
+          first.classList.add("cube", "post1");
+          second.classList.add("cube", "post2");
+          third.classList.add("cube", "post3");
+          for (let i = 0; i < rec1.length; i++) {
+            i <= rec1.length / 2 - 1
+              ? (rec1[i].classList.add("outside"),
+                rec2[i].classList.add("outside"),
+                rec3[i].classList.add("outside"))
+              : (rec1[i].classList.add("inside"),
+                rec2[i].classList.add("inside"),
+                rec3[i].classList.add("inside"));
+          }
+          time = false;
+        } else {
+          first.classList.remove("cube", "post1");
+          second.classList.remove("cube", "post2");
+          third.classList.remove("cube", "post3");
+          first.classList.add("ring");
+          second.classList.add("ring");
+          third.classList.add("ring");
+
+          for (let i = 0; i < rec1.length; i++) {
+            i <= rec1.length / 2 - 1
+              ? (rec1[i].classList.remove("outside"),
+                rec2[i].classList.remove("outside"),
+                rec3[i].classList.remove("outside"))
+              : (rec1[i].classList.remove("inside"),
+                rec2[i].classList.remove("inside"),
+                rec3[i].classList.remove("inside"));
+          }
+          time = true;
+        }
+      };
+    </script>
+  </body>
+</html>
